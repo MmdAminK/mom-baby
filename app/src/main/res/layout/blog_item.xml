@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="pregnancyBlog"
+            type="com.app.mombaby.models.pregnancyHome.PregnancyBlog" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/blog_item_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutDescription="@xml/blog_item_scene">
+
+            <ImageView
+                android:id="@+id/blog_item_image"
+                loadImage="@{pregnancyBlog.image}"
+                android:scaleType="fitXY"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/blog_item_time_created"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:paddingLeft="8dp"
+                android:drawablePadding="8dp"
+                android:fontFamily="@font/iran_sans"
+                android:gravity="left"
+                android:textColor="#6E676F"
+                android:textSize="14sp"
+                app:layout_constraintRight_toLeftOf="@+id/learning"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/blog_item_image"
+                app:layout_constraintWidth_percent=".5" />
+
+            <TextView
+                android:id="@+id/learning"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/iran_sans"
+                android:gravity="right"
+                android:paddingRight="8dp"
+                android:text="مطلب آموزشی"
+                android:textColor="#6E676F"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/blog_item_time_created"
+                app:layout_constraintTop_toBottomOf="@+id/blog_item_image"
+                app:layout_constraintWidth_percent=".5" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/iran_sans_bold"
+                android:padding="8dp"
+                android:text="@{pregnancyBlog.title}"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/learning" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

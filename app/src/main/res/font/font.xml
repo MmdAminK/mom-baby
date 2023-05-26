@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:targetApi="o" >
+    <font android:font="@font/iran_sans_black"/>
+    <font android:font="@font/iran_sans_bold"/>
+    <font android:font="@font/iran_sans_medium"/>
+    <font android:font="@font/iran_sans"/>
+    <font android:font="@font/iran_sans_light"/>
+</font-family>

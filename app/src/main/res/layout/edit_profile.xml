@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.app.mombaby.models.user.UserDto" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/pregnant_status_back"
+            android:alpha=".35"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.app.mombaby.views.AppActionBar
+            android:id="@+id/edit_profile_action_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="ویرایش حساب کاربری"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/edit_profile_submit"
+            app:layout_constraintTop_toBottomOf="@+id/edit_profile_action_bar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/iran_sans_medium"
+                    android:paddingRight="16dp"
+                    android:text="نام"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="12dp"
+                    android:elevation="4dp"
+                    app:cardCornerRadius="29dp"
+                    app:cardElevation="4dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/edit_profile_first_name_text_field"
+                        style="@style/roundedEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:boxStrokeErrorColor="#E1012A"
+                        app:endIconMode="clear_text"
+                        app:errorTextAppearance="@style/ErrorTextAppearance"
+                        app:hintEnabled="false">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edit_profile_first_name_edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/iran_sans"
+                            android:gravity="center_vertical|right"
+                            android:hint="نام خود را وارد کنید"
+                            android:text="@{user.firstName}"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:letterSpacing=".05"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/iran_sans_medium"
+                    android:paddingRight="16dp"
+                    android:text="نام خانوادگی"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="12dp"
+                    android:elevation="4dp"
+                    app:cardCornerRadius="29dp"
+                    app:cardElevation="4dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/edit_profile_last_name_text_field"
+                        style="@style/roundedEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:boxStrokeErrorColor="#E1012A"
+                        app:endIconMode="clear_text"
+                        app:errorTextAppearance="@style/ErrorTextAppearance"
+                        app:hintEnabled="false">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edit_profile_last_name_edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/iran_sans"
+                            android:gravity="center_vertical|right"
+                            android:hint="نام خانوادگی خود را وارد کنید"
+                            android:text="@{user.lastName}"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:letterSpacing=".05"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/iran_sans_medium"
+                    android:paddingRight="16dp"
+                    android:text="سن"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="12dp"
+                    android:elevation="4dp"
+                    app:cardCornerRadius="29dp"
+                    app:cardElevation="4dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/edit_profile_age_text_field"
+                        style="@style/roundedEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:boxStrokeErrorColor="#E1012A"
+                        app:endIconMode="clear_text"
+                        app:errorTextAppearance="@style/ErrorTextAppearance"
+                        app:hintEnabled="false">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edit_profile_age_edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/iran_sans"
+                            android:gravity="center_vertical|right"
+                            android:hint="سن خود را وارد کنید"
+                            android:text="@{user.age.toString()}"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"
+                            android:letterSpacing=".05"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/iran_sans_medium"
+                    android:paddingRight="16dp"
+                    android:text="تعداد فرزندان"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="12dp"
+                    android:elevation="4dp"
+                    app:cardCornerRadius="29dp"
+                    app:cardElevation="4dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/edit_profile_child_count_text_field"
+                        style="@style/roundedEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:boxStrokeErrorColor="#E1012A"
+                        app:endIconMode="clear_text"
+                        app:errorTextAppearance="@style/ErrorTextAppearance"
+                        app:hintEnabled="false">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edit_profile_child_count_edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/iran_sans"
+                            android:gravity="center_vertical|right"
+                            android:hint="تعداد فرزندان خود را وارد کنید"
+                            android:text="@{user.childNum.toString()}"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"
+                            android:letterSpacing=".05"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/iran_sans_medium"
+                    android:paddingRight="16dp"
+                    android:text="شغل"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="12dp"
+                    android:elevation="4dp"
+                    app:cardCornerRadius="29dp"
+                    app:cardElevation="4dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/edit_profile_job_text_field"
+                        style="@style/roundedEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:boxStrokeErrorColor="#E1012A"
+                        app:endIconMode="clear_text"
+                        app:errorTextAppearance="@style/ErrorTextAppearance"
+                        app:hintEnabled="false">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edit_profile_job_edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/iran_sans"
+                            android:gravity="center_vertical|right"
+                            android:hint="شغل خود را وارد کنید"
+                            android:text="@{user.job}"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:letterSpacing=".05"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/iran_sans_medium"
+                    android:paddingRight="16dp"
+                    android:text="ایمیل"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="12dp"
+                    android:elevation="4dp"
+                    app:cardCornerRadius="29dp"
+                    app:cardElevation="4dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/edit_profile_email_text_field"
+                        style="@style/roundedEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:boxStrokeErrorColor="#E1012A"
+                        app:endIconMode="clear_text"
+                        app:errorTextAppearance="@style/ErrorTextAppearance"
+                        app:hintEnabled="false">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edit_profile_email_edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/iran_sans"
+                            android:gravity="center_vertical|right"
+                            android:hint="ایمیل خود را وارد کنید"
+                            android:text="@{user.email}"
+                            android:imeOptions="actionDone"
+                            android:inputType="textWebEmailAddress"
+                            android:letterSpacing=".05"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <Button
+            android:id="@+id/edit_profile_submit"
+            style="@style/roundedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/buttonBackColor"
+            android:fontFamily="@font/iran_sans_bold"
+            android:minHeight="60dp"
+            android:text="ذخیره"
+            android:elevation="4dp"
+            android:layout_marginBottom="12dp"
+            android:textColor="#6D6870"
+            android:textSize="18sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

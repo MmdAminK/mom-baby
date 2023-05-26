@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        tools:layout="@layout/home"
+        android:name="com.app.mombaby.ui.fragments.mainPage.home.Home"
+        android:label="Home">
+
+        <action
+            android:id="@+id/action_home_to_pregnancyHome"
+            app:destination="@id/pregnancyHome" />
+        <action
+            android:id="@+id/action_home_to_menstruationHome"
+            app:destination="@id/menstruationHome"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/tests"
+        tools:layout="@layout/tests"
+        android:name="com.app.mombaby.ui.fragments.mainPage.tests.Tests"
+        android:label="Tests">
+        <action
+            android:id="@+id/action_tests_to_pregnancyTestQuestions"
+            app:destination="@id/pregnancyTestQuestions"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_tests_to_anxietyTest"
+            app:destination="@id/anxietyTestDescription" />
+        <action
+            android:id="@+id/action_tests_to_depressionTestDescriptions"
+            app:destination="@id/depressionTestDescriptions" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/tools"
+        tools:layout="@layout/tools"
+        android:name="com.app.mombaby.ui.fragments.mainPage.tools.Tools"
+        android:label="Tools">
+        <action
+            android:id="@+id/action_tools_to_bmiCalculator"
+            app:destination="@id/bmiCalculator"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_tools_to_gestationalAgeCalculator"
+            app:destination="@id/gestationalAgeCalculator"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_tools_to_ovulationDay"
+            app:destination="@id/ovulationDay"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_tools_to_babyBirthDayCalculator"
+            app:destination="@id/babyBirthDayCalculator"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_tools_to_overWeightCalculator"
+            app:destination="@id/overWeightCalculator"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/bmiCalculator"
+        android:name="com.app.mombaby.ui.fragments.mainPage.tools.calculators.BmiCalculator"
+        android:label="BmiCalculator"
+        tools:layout="@layout/bmi_calculator">
+        <argument
+            android:name="weight"
+            android:defaultValue="None" />
+        <argument
+            android:name="height"
+            android:defaultValue="None" />
+        <action
+            android:id="@+id/action_bmiCalculator_to_bmiResult"
+            app:destination="@id/bmiResult"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/bmiResult"
+        android:name="com.app.mombaby.ui.fragments.mainPage.tools.results.BmiResult"
+        android:label="BmiResult"
+        tools:layout="@layout/bmi_result" />
+    <fragment
+        android:id="@+id/gestationalAgeCalculator"
+        android:name="com.app.mombaby.ui.fragments.mainPage.tools.calculators.GestationalAgeCalculator"
+        android:label="GestationalAgeCalculator"
+        tools:layout="@layout/gestational_age_calculator">
+        <action
+            android:id="@+id/action_gestationalAgeCalculator_to_gestationalAgeResult"
+            app:destination="@id/gestationalAgeResult"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/ovulationDay"
+        android:name="com.app.mombaby.ui.fragments.mainPage.tools.calculators.OvulationDayCalculator"
+        android:label="OvulationDay"
+        tools:layout="@layout/ovulation_day_calculator">
+        <action
+            android:id="@+id/action_ovulationDay_to_ovulationDayResult"
+            app:destination="@id/ovulationDayResult"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/babyBirthDayCalculator"
+        android:name="com.app.mombaby.ui.fragments.mainPage.tools.calculators.BabyBirthDayCalculator"
+        android:label="BabyBirthDayCalculator"
+        tools:layout="@layout/baby_birthday_calculator">
+        <action
+            android:id="@+id/action_babyBirthDayCalculator_to_babyBirthDayResult"
+            app:destination="@id/babyBirthDayResult"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/overWeightCalculator"
+        android:name="com.app.mombaby.ui.fragments.mainPage.tools.calculators.OverWeightCalculator"
+        android:label="OverWeightCalculator"
+        tools:layout="@layout/over_weight_calculator">
+        <action
+            android:id="@+id/action_overWeightCalculator_to_overWeightResult"
+            app:destination="@id/overWeightResult"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/overWeightResult"
+        android:name="com.app.mombaby.ui.fragments.mainPage.tools.results.OverWeightResult"
+        android:label="OverWeightResult"
+        tools:layout="@layout/over_weight_result" />
+    <fragment
+        android:id="@+id/babyBirthDayResult"
+        android:name="com.app.mombaby.ui.fragments.mainPage.tools.results.BabyBirthDayResult"
+        android:label="BabyBirthDayResult"
+        tools:layout="@layout/baby_birth_day_result" />
+    <fragment
+        android:id="@+id/ovulationDayResult"
+        android:name="com.app.mombaby.ui.fragments.mainPage.tools.results.OvulationDayResult"
+        android:label="OvulationDayResult"
+        tools:layout="@layout/ovulation_day_result" />
+    <fragment
+        android:id="@+id/gestationalAgeResult"
+        android:name="com.app.mombaby.ui.fragments.mainPage.tools.results.GestationalAgeResult"
+        android:label="GestationalAgeResult"
+        tools:layout="@layout/gestational_age_result" />
+    <fragment
+        android:id="@+id/pregnancyTestQuestions"
+        android:name="com.app.mombaby.ui.fragments.mainPage.tests.questions.PregnancyTestQuestions"
+        android:label="PregnancyTestQuestions"
+        tools:layout="@layout/pregnancy_test_questions" />
+    <fragment
+        android:id="@+id/anxietyTestDescription"
+        android:name="com.app.mombaby.ui.fragments.mainPage.tests.questions.AnxietyTestDescription"
+        android:label="anxiety_test"
+        tools:layout="@layout/anxiety_test_description">
+        <action
+            android:id="@+id/action_anxietyTestDescription_to_testQuestions"
+            app:destination="@id/testQuestions"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/depressionTestDescriptions"
+        android:name="com.app.mombaby.ui.fragments.mainPage.tests.questions.DepressionTestDescriptions"
+        android:label="DepressionTestDescriptions"
+        tools:layout="@layout/depression_test_descriptions">
+        <action
+            android:id="@+id/action_depressionTestDescriptions_to_depressionTestQuestions"
+            app:destination="@id/testQuestions"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/testQuestions"
+        android:name="com.app.mombaby.ui.fragments.mainPage.tests.questions.TestQuestions"
+        android:label="TestQuestions"
+        tools:layout="@layout/test_questions">
+        <action
+            android:id="@+id/action_depressionTestQuestions_to_testResult"
+            app:destination="@id/testResult"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/testResult"
+        android:name="com.app.mombaby.ui.fragments.mainPage.tests.results.TestResult"
+        android:label="TestResult"
+        tools:layout="@layout/test_result">
+        <action
+            android:id="@+id/action_testResult_to_tests"
+            app:destination="@id/tests"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/userProfile"
+        android:name="com.app.mombaby.ui.fragments.mainPage.user.UserProfile"
+        android:label="UserProfile"
+        tools:layout="@layout/user_profile">
+        <action
+            android:id="@+id/action_userProfile_to_reminder"
+            app:destination="@id/reminder"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_userProfile_to_editProfile"
+            app:destination="@id/editProfile"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_userProfile_to_rules"
+            app:destination="@id/rules"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_userProfile_to_contactUs"
+            app:destination="@id/contactUs"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_userProfile_to_aboutUs"
+            app:destination="@id/aboutUs"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_userProfile_to_friends"
+            app:destination="@id/friends"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_userProfile_to_profilePassword"
+            app:destination="@id/profilePassword"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/reminder"
+        android:name="com.app.mombaby.ui.fragments.mainPage.user.reminder.Reminder"
+        android:label="Reminder"
+        tools:layout="@layout/reminder" />
+    <fragment
+        android:id="@+id/editProfile"
+        android:name="com.app.mombaby.ui.fragments.mainPage.user.EditProfile"
+        android:label="EditProfile"
+        tools:layout="@layout/edit_profile" />
+    <fragment
+        android:id="@+id/pregnancyHome"
+        android:name="com.app.mombaby.ui.fragments.mainPage.home.PregnancyHome"
+        android:label="PregnancyHome"
+        tools:layout="@layout/pregnancy_home">
+        <action
+            android:id="@+id/action_pregnancyHome_to_showBlogs"
+            app:destination="@id/showBlogs"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/showBlogs"
+        android:name="com.app.mombaby.ui.fragments.mainPage.home.ShowBlogs"
+        android:label="ShowBlogs"
+        tools:layout="@layout/show_blogs">
+        <action
+            android:id="@+id/action_showBlogs_to_blogItemDetail"
+            app:destination="@id/blogItemDetail"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/blogItemDetail"
+        android:name="com.app.mombaby.ui.fragments.mainPage.home.BlogItemDetail"
+        android:label="BlogItemDetail"
+        tools:layout="@layout/blog_item_detail" />
+    <fragment
+        android:id="@+id/menstruationHome"
+        android:name="com.app.mombaby.ui.fragments.mainPage.home.MenstruationHome"
+        android:label="MenstruationHome"
+        tools:layout="@layout/menstruation_home">
+        <action
+            android:id="@+id/action_menstruationHome_to_showBlogs"
+            app:destination="@id/showBlogs"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_menstruationHome_to_blogItemDetail"
+            app:destination="@id/blogItemDetail"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/rules"
+        android:name="com.app.mombaby.ui.fragments.mainPage.user.appInformation.Rules"
+        android:label="Rules"
+        tools:layout="@layout/rules" />
+    <fragment
+        android:id="@+id/contactUs"
+        android:name="com.app.mombaby.ui.fragments.mainPage.user.appInformation.ContactUs"
+        android:label="ContactUs"
+        tools:layout="@layout/contact_us" />
+    <fragment
+        android:id="@+id/aboutUs"
+        android:name="com.app.mombaby.ui.fragments.mainPage.user.appInformation.AboutUs"
+        android:label="AboutUs"
+        tools:layout="@layout/about_us" />
+    <fragment
+        android:id="@+id/friends"
+        android:name="com.app.mombaby.ui.fragments.mainPage.user.appInformation.Friends"
+        android:label="Friends"
+        tools:layout="@layout/friends" />
+    <fragment
+        android:id="@+id/profilePassword"
+        android:name="com.app.mombaby.ui.fragments.mainPage.user.password.ProfilePassword"
+        android:label="ProfilePassword"
+        tools:layout="@layout/profile_password">
+        <action
+            android:id="@+id/action_profilePassword_to_profileChangePassword"
+            app:destination="@id/profileChangePassword"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileChangePassword"
+        android:name="com.app.mombaby.ui.fragments.mainPage.user.password.ProfileChangePassword"
+        android:label="ProfileChangePassword"
+        tools:layout="@layout/profile_change_password">
+        <action
+            android:id="@+id/action_profileChangePassword_to_userProfile"
+            app:destination="@id/userProfile"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+
+</navigation>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_nav_graph"
+    app:startDestination="@id/splashScreen">
+
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="com.app.mombaby.ui.fragments.intro.SplashScreen"
+        android:label="SplashScreen"
+        tools:layout="@layout/splash_screen">
+        <action
+            android:id="@+id/action_splashScreen_to_intro"
+            app:destination="@id/intro"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_splashScreen_to_appMainPage"
+            app:destination="@id/appMainPage"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_splashScreen_to_login"
+            app:destination="@id/login"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_splashScreen_to_passwordLogin"
+            app:destination="@id/passwordLogin"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/intro"
+        android:name="com.app.mombaby.ui.fragments.intro.Intro"
+        android:label="Intro"
+        tools:layout="@layout/intro">
+        <action
+            android:id="@+id/action_intro_to_login"
+            app:destination="@id/login"
+            app:enterAnim="@animator/nav_default_enter_anim"
+            app:exitAnim="@animator/nav_default_exit_anim"
+            app:popEnterAnim="@animator/nav_default_pop_enter_anim"
+            app:popExitAnim="@animator/nav_default_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/login"
+        android:name="com.app.mombaby.ui.fragments.loginPages.Login"
+        android:label="Login"
+        tools:layout="@layout/login">
+        <argument
+            android:name="phoneNumber"
+            android:defaultValue="None" />
+        <action
+            android:id="@+id/action_login_to_verify"
+            app:destination="@id/verify"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_login_to_rules2"
+            app:destination="@id/rules2"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/verify"
+        android:name="com.app.mombaby.ui.fragments.loginPages.Verify"
+        android:label="Verify"
+        tools:layout="@layout/verify">
+        <action
+            android:id="@+id/action_verify_to_intro"
+            app:popUpTo="@id/login" />
+        <action
+            android:id="@+id/action_verify_to_signUp"
+            app:destination="@id/signUp"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_verify_to_pregnancyStatus"
+            app:destination="@id/pregnancyStatus" />
+        <action
+            android:id="@+id/action_verify_to_setPassword"
+            app:destination="@id/setPassword"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_verify_to_passwordLogin"
+            app:destination="@id/passwordLogin" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUp"
+        android:name="com.app.mombaby.ui.fragments.loginPages.SignUp"
+        android:label="SignUp"
+        tools:layout="@layout/sign_up">
+        <action
+            android:id="@+id/action_signUp_to_login"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_signUp_to_pregnancyStatus"
+            app:destination="@id/pregnancyStatus" />
+    </fragment>
+    <fragment
+        android:id="@+id/pregnancyStatus"
+        android:name="com.app.mombaby.ui.fragments.loginPages.PregnancyStatus"
+        android:label="PregnancyStatus"
+        tools:layout="@layout/pregnancy_status">
+        <action
+            android:id="@+id/action_pregnancyStatus_to_appMainPage"
+            app:destination="@id/appMainPage" />
+    </fragment>
+    <activity
+        android:id="@+id/appMainPage"
+        android:name="com.app.mombaby.ui.activities.AppMainPage"
+        android:label="AppMainPage" />
+    <fragment
+        android:id="@+id/rules2"
+        android:name="com.app.mombaby.ui.fragments.mainPage.user.appInformation.Rules"
+        android:label="Rules"
+        tools:layout="@layout/rules">
+        <action
+            android:id="@+id/action_rules2_to_login"
+            app:destination="@id/login" />
+    </fragment>
+    <fragment
+        android:id="@+id/setPassword"
+        android:name="com.app.mombaby.ui.fragments.loginPages.password.SetPassword"
+        android:label="SetPassword"
+        tools:layout="@layout/set_password">
+        <action
+            android:id="@+id/action_setPassword_to_signUp"
+            app:destination="@id/signUp" />
+        <action
+            android:id="@+id/action_setPassword_to_pregnancyStatus"
+            app:destination="@id/pregnancyStatus"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/passwordLogin"
+        android:name="com.app.mombaby.ui.fragments.loginPages.password.PasswordLogin"
+        android:label="PasswordLogin"
+        tools:layout="@layout/password_login">
+        <action
+            android:id="@+id/action_passwordLogin_to_forgetPassword"
+            app:destination="@id/forgetPassword"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_passwordLogin_to_appMainPage"
+            app:destination="@id/appMainPage"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgetPassword"
+        android:name="com.app.mombaby.ui.fragments.loginPages.password.ForgetPassword"
+        android:label="ForgetPassword"
+        tools:layout="@layout/forget_password">
+        <action
+            android:id="@+id/action_forgetPassword_to_forgetPasswordVerify"
+            app:destination="@id/forgetPasswordVerify"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgetPasswordVerify"
+        android:name="com.app.mombaby.ui.fragments.loginPages.password.ForgetPasswordVerify"
+        android:label="ForgetPasswordVerify"
+        tools:layout="@layout/forget_password_verify">
+
+        <action
+            android:id="@+id/action_forgetPasswordVerify_to_appMainPage"
+            app:destination="@id/appMainPage" />
+    </fragment>
+</navigation>

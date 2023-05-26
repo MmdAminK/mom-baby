@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<TextView android:id="@+id/textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="center"
+    android:fontFamily="@font/iran_sans_bold"
+    android:textSize="18sp"
+    android:text="22"
+    android:maxLines="1"
+    android:padding="16dp"
+    android:textColor="#212121"
+    tools:targetApi="o"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" />
+

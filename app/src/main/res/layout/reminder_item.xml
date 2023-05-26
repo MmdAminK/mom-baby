@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="reminder"
+            type="com.app.mombaby.models.reminder.Reminder" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="3dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/reminder_item_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_edit_icon"
+                android:layout_marginLeft="8dp"
+                android:layout_marginBottom="12dp"
+                app:layout_constraintVertical_chainStyle="spread"
+                app:layout_constraintBottom_toTopOf="@+id/reminder_item_remove"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/reminder_item_remove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="6dp"
+                android:src="@drawable/remove_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reminder_item_edit" />
+
+            <TextView
+                android:id="@+id/reminder_item_title"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="right|center"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/iran_sans_medium"
+                android:text="@{reminder.title}"
+                app:layout_constraintBottom_toBottomOf="@+id/reminder_item_edit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/reminder_item_edit"
+                app:layout_constraintTop_toTopOf="@+id/reminder_item_edit" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/reminder_item_remove"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/reminder_item_remove"
+                app:layout_constraintTop_toTopOf="@+id/reminder_item_remove">
+
+                <TextView
+                    android:id="@+id/reminder_item_period"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableRight="@drawable/clock_icon"
+                    android:drawablePadding="6dp"
+                    android:ellipsize="end"
+                    android:padding="2dp"
+                    android:fontFamily="@font/iran_sans"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:text="@{reminder.reminderPeriod}"
+                    android:textColor="@color/appDarkPurple"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/reminder_item_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableRight="@drawable/calendar_icon"
+                    android:drawablePadding="6dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/iran_sans"
+                    android:gravity="right"
+                    android:padding="2dp"
+                    android:maxLines="1"
+                    android:text="@{reminder.reminderDate}"
+                    android:textColor="@color/appDarkPurple"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/reminder_item_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableRight="@drawable/round_clock_icon"
+                    android:drawablePadding="6dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/iran_sans"
+                    android:padding="2dp"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:text="@{reminder.reminderHour}"
+                    android:textColor="@color/appDarkPurple"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

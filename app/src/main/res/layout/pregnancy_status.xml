@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/backgroundColor"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_margin="24dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:strokeWidth="2dp"
+                app:strokeColor="#2DB3B3B3">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="16dp"
+                        android:src="@drawable/app_icon_no_title" />
+
+                    <TextView
+                        android:id="@+id/hello"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/iran_sans_bold"
+                        android:gravity="center"
+                        android:text="سلام سارا"
+                        android:textColor="#6D6870"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/pregnancy_status_subtitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/iran_sans_light"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="لطفا بهمون بگو الان در چه حالی ؟"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="24dp">
+
+                        <LinearLayout
+                            android:id="@+id/pregnancy_status_linear"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+
+                            <LinearLayout
+                                android:id="@+id/pregnancy_status_not_pregnant_linear"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="26dp"
+                                    android:layout_height="60dp"
+                                    android:layout_gravity="center"
+                                    android:contentDescription="@string/contentDescription"
+                                    android:src="@drawable/not_pregnant" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/iran_sans_bold"
+                                    android:text="باردار نیستم"
+                                    android:textColor="@color/appDarkPurple"
+                                    android:textSize="13sp" />
+
+                            </LinearLayout>
+
+                            <com.github.angads25.toggle.widget.LabeledSwitch
+                                android:id="@+id/sticky_switch"
+                                android:layout_width="90dp"
+                                android:layout_height="45dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                app:colorBorder="@color/appDarkPurple"
+                                app:colorOn="@color/appDarkPurple"
+                                app:on="false"
+                                app:textOff=""
+                                app:textOn="" />
+
+                            <LinearLayout
+                                android:id="@+id/pregnancy_status_pregnant_linear"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="26dp"
+                                    android:layout_height="60dp"
+                                    android:layout_gravity="center"
+                                    android:contentDescription="@string/contentDescription"
+                                    android:src="@drawable/pregnant" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/iran_sans_bold"
+                                    android:text="باردار هستم"
+                                    android:textColor="@color/appDarkPurple"
+                                    android:textSize="13sp" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/pregnancy_status_subimt"
+                            style="@style/strokeButton"
+                            android:layout_width="0dp"
+                            android:layout_height="65dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="18dp"
+                            android:layout_marginBottom="12dp"
+                            android:layout_weight="1"
+                            android:backgroundTint="#ffffff"
+                            android:fontFamily="@font/iran_sans_bold"
+                            android:text="بزن بریم"
+                            android:textColor="@color/appDarkPurple"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/pregnancy_status_linear"
+                            app:layout_constraintStart_toStartOf="@+id/pregnancy_status_linear"
+                            app:layout_constraintTop_toBottomOf="@+id/pregnancy_status_linear" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

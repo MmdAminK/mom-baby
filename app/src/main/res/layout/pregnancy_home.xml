@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/pregnancy_home_motion"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layoutDescription="@xml/pregnancy_home_scene">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/pregnant_status_back"
+            android:alpha=".35"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/pregnancy_linear"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/hello"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:textSize="22sp"
+                        android:fontFamily="@font/iran_sans_bold"
+                        android:textColor="@color/black"
+                        android:text="وقت بخیر"
+                        android:gravity="center"
+                        android:focusableInTouchMode="true" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp">
+
+                        <ImageView
+                            android:id="@+id/pregnancy_show_dialog"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_margin="6dp"
+                            android:scaleY=".8"
+                            android:scaleX=".8"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_home_setting_icon" />
+
+                        <TextView
+                            android:id="@+id/pregnancy_home_week"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="6dp"
+                            android:minWidth="100dp"
+                            android:ellipsize="marquee"
+                            android:gravity="center"
+                            android:fontFamily="@font/iran_sans_medium"
+                            android:textColor="@color/appDarkPurple"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="وضعیت بارداری : "
+                            android:layout_margin="6dp"
+                            android:layout_gravity="center"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/iran_sans_medium" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/baby_birth_day"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:gravity="center"
+                        android:layout_marginTop="4dp"
+                        android:textColor="#6D6870"
+                        android:fontFamily="@font/iran_sans" />
+
+                    <ImageView
+                        android:id="@+id/pregnant_home_baby_image"
+                        android:layout_width="220dp"
+                        android:layout_height="220dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_gravity="center" />
+
+                    <Button
+                        android:id="@+id/pregnancy_change_status"
+                        style="@style/roundedButton"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:backgroundTint="@color/buttonBackColor"
+                        android:fontFamily="@font/iran_sans_bold"
+                        android:minHeight="60dp"
+                        android:text="تغییر به حالت قاعدگی"
+                        android:textColor="#6D6870"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toTopOf="@+id/sign_up_later"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:orientation="horizontal">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/pregnancy_home_recycler_view"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/pregnancy_side_home_recycler_view"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:visibility="gone"
+                            android:id="@+id/pregnancy_side_home_recycler_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </LinearLayout>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/pregnancy_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Dialog"
+            app:cardElevation="4dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/pregnancy_dialog_back"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/back"
+                        android:layout_margin="12dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/iran_sans_bold"
+                        android:gravity="center"
+                        android:text="تعیین اولین روز بارداری"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/iran_sans_medium"
+                        android:paddingRight="16dp"
+                        android:text="آخرین زمان قاعدگی"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <com.app.mombaby.views.AppPersianCalendar
+                        android:id="@+id/pregnancy_dialog_calendar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:range_months_after_init="0"
+                        app:range_months_before_init="12"
+                        android:layout_marginTop="12dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/iran_sans_medium"
+                        android:paddingRight="16dp"
+                        android:text="نام"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="58dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="12dp"
+                        android:elevation="4dp"
+                        app:cardCornerRadius="29dp"
+                        app:cardElevation="4dp"
+                        app:layout_constraintTop_toBottomOf="@+id/verify_phone_label">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/pregnancy_dialog_baby_name_text_field"
+                            style="@style/roundedEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:boxStrokeErrorColor="#E1012A"
+                            app:endIconMode="clear_text"
+                            app:errorTextAppearance="@style/ErrorTextAppearance"
+                            app:hintEnabled="false">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/pregnancy_dialog_baby_name_edit_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/iran_sans"
+                                android:gravity="center_vertical|right"
+                                android:hint="اسم نی‌نی"
+                                android:imeOptions="actionDone"
+                                android:inputType="text"
+                                android:letterSpacing=".05"
+                                android:textSize="16sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <Button
+                        android:id="@+id/pregnancy_dialog_submit"
+                        style="@style/roundedButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:backgroundTint="@color/buttonBackColor"
+                        android:fontFamily="@font/iran_sans_bold"
+                        android:minHeight="60dp"
+                        android:text="ذخیره اطلاعات"
+                        android:textColor="#6D6870"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toTopOf="@+id/sign_up_later"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                </LinearLayout>
+            </ScrollView>
+
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+
+</layout>
+

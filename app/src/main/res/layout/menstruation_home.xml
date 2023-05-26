@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/menstruation_motion"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutDescription="@xml/menstruation_home_scene">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/pregnant_status_back"
+            android:alpha=".35"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/menstruation_calendar_card"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent=".25"
+            android:minHeight="130dp"
+            app:cardElevation="4dp"
+            style="@style/Calendar"
+            app:cardBackgroundColor="#FFEEEEEE"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/menstruation_calendar_recycler_view"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/open_calendar"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            app:cardCornerRadius="17.5dp"
+            app:cardElevation="2dp"
+            app:layout_constraintTop_toBottomOf="@+id/menstruation_calendar_card"
+            app:layout_constraintBottom_toBottomOf="@+id/menstruation_calendar_card"
+            app:layout_constraintEnd_toEndOf="@+id/menstruation_calendar_card"
+            app:layout_constraintStart_toStartOf="@+id/menstruation_calendar_card"
+            android:rotation="-90"
+            android:elevation="5dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/back"
+                android:scaleY=".55"
+                android:scaleX=".55"
+                app:tint="#3E3E3E" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <LinearLayout
+            android:id="@+id/menstruation_linear"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_marginTop="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/menstruation_calendar_card">
+
+
+            <androidx.core.widget.NestedScrollView
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/hello"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:focusableInTouchMode="true"
+                        android:fontFamily="@font/iran_sans_bold"
+                        android:gravity="right"
+                        android:text="وقت بخیر"
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/menstruation_show_dialog"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="6dp"
+                            android:scaleX=".8"
+                            android:scaleY=".8"
+                            android:src="@drawable/ic_home_setting_icon" />
+
+                        <TextView
+                            android:id="@+id/next_period_day"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="6dp"
+                            android:fontFamily="@font/iran_sans_medium"
+                            android:textColor="@color/appDarkPurple"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="6dp"
+                            android:fontFamily="@font/iran_sans_medium"
+                            android:text="دوره قاعدگی بعدی : "
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/menstruation_status"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/iran_sans"
+                        android:gravity="right"
+                        android:paddingTop="6dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="6dp"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/next_ovulation_day"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="6dp"
+                            android:fontFamily="@font/iran_sans_medium"
+                            android:textColor="#179B0E"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="6dp"
+                            android:fontFamily="@font/iran_sans_medium"
+                            android:text="تخمک گذاری : "
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <me.angrybyte.circularslider.CircularSlider
+                            android:id="@+id/circular"
+                            android:layout_width="match_parent"
+                            android:layout_height="350dp"
+                            android:padding="25dp"
+                            app:border_gradient_colors="#F4ACB7;#F26A8A;#F4ACB7;#F4ACB7;#F4ACB7"
+                            app:border_thickness="10dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:thumb_color="#F4ACB7"
+                            app:thumb_size="50dp"
+                            app:angle="-4.77"
+                            app:thumb_image="@drawable/profile_icon" />
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="220dp"
+                            android:layout_height="220dp"
+                            android:background="@drawable/menstruation_circle"
+                            app:layout_constraintBottom_toBottomOf="@+id/circular"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.497"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/circular" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/iran_sans"
+                            android:text="روز مانده تا شروع دوره"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView4"
+                            app:layout_constraintEnd_toEndOf="@+id/textView4"
+                            app:layout_constraintStart_toStartOf="@+id/textView4"
+                            app:layout_constraintTop_toBottomOf="@id/next_period_day_circle"
+                            app:layout_constraintVertical_bias="0" />
+
+                        <TextView
+                            android:id="@+id/next_period_day_circle"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:autoSizeTextType="uniform"
+                            android:fontFamily="@font/iran_sans_bold"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView4"
+                            app:layout_constraintEnd_toEndOf="@+id/textView4"
+                            app:layout_constraintHorizontal_bias="0.493"
+                            app:layout_constraintStart_toStartOf="@+id/textView4"
+                            app:layout_constraintTop_toTopOf="@+id/textView4" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="28dp">
+
+                        <TextView
+                            android:id="@+id/menstruation_all_articles"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:drawableLeft="@drawable/back"
+                            android:drawablePadding="6dp"
+                            android:fontFamily="@font/iran_sans"
+                            android:paddingLeft="4dp"
+                            android:text="همه مقالات"
+                            android:textColor="#C52184"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.526" />
+
+                        <TextView
+                            android:id="@+id/textView7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="4dp"
+                            android:fontFamily="@font/iran_sans_bold"
+                            android:paddingRight="4dp"
+                            android:text="آخرین مقالات"
+                            android:textColor="@color/black"
+                            android:textSize="24sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/textView8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/iran_sans_bold"
+                            android:paddingRight="4dp"
+                            android:text="قاعدگی"
+                            android:textColor="@color/appDarkPurple"
+                            android:textSize="24sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/textView7"
+                            app:layout_constraintHorizontal_bias="1"
+                            app:layout_constraintStart_toEndOf="@+id/menstruation_all_articles"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/menstruation_home_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </LinearLayout>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/menstruation_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Dialog"
+            app:cardElevation="4dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/menstruation_dialog_back"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/back"
+                        android:layout_margin="12dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/iran_sans_bold"
+                        android:gravity="center"
+                        android:text="ثبت دوره قاعدگی"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/iran_sans_medium"
+                        android:paddingRight="16dp"
+                        android:text="آخرین زمان قاعدگی"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <com.app.mombaby.views.AppPersianCalendar
+                        android:id="@+id/menstruation_dialog_calendar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:range_months_after_init="0"
+                        app:range_months_before_init="12"
+                        android:layout_marginTop="12dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/iran_sans_medium"
+                        android:paddingRight="16dp"
+                        android:text="مدت زمان بین دو خونریزی (روز)"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <com.app.mombaby.views.MomBabyNumberPicker
+                        android:id="@+id/menstruation_dialog_between_period"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginRight="16dp"
+                        app:np_dividerThickness="0dp"
+                        app:np_max="42"
+                        app:np_min="14" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/iran_sans_medium"
+                        android:paddingRight="16dp"
+                        android:text=" طول دوره خونریزی (روز)"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <com.app.mombaby.views.MomBabyNumberPicker
+                        android:id="@+id/menstruation_dialog_period_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginRight="16dp"
+                        app:np_dividerThickness="0dp"
+                        app:np_max="14"
+                        app:np_min="1" />
+
+                    <Button
+                        android:id="@+id/menstruation_dialog_submit"
+                        style="@style/roundedButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:backgroundTint="@color/buttonBackColor"
+                        android:fontFamily="@font/iran_sans_bold"
+                        android:minHeight="60dp"
+                        android:text="ذخیره اطلاعات"
+                        android:textColor="#6D6870"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toTopOf="@+id/sign_up_later"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                </LinearLayout>
+            </ScrollView>
+
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+
+</layout>
+

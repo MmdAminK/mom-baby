@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="0dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#99FFDAD4"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    android:layout_margin="12dp">
+
+                    <TextView
+                        android:id="@+id/app_persian_calendar_next_month"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="bottom"
+                        android:textSize="12sp"
+                        android:gravity="left"
+                        android:fontFamily="@font/iran_sans"
+                        android:textColor="@color/black"
+                        android:layout_height="wrap_content"
+                        android:text="ماه بعد"
+                        android:drawableLeft="@drawable/back_calendar"
+                        android:drawablePadding="12dp" />
+
+                    <TextView
+                        android:id="@+id/app_persian_calendar_month"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/iran_sans_bold"
+                        android:textColor="#6E676F"
+                        android:gravity="center"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/app_persian_calendar_previous_month"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="ماه قبل"
+                        android:drawableRight="@drawable/forward"
+                        android:fontFamily="@font/iran_sans"
+                        android:textColor="@color/black"
+                        android:drawablePadding="12dp"
+                        android:layout_gravity="bottom"
+                        android:textSize="12sp"
+                        android:gravity="right" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:background="#535353"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp" />
+            </LinearLayout>
+
+
+            <com.mohamadian.persianhorizontalexpcalendar.PersianHorizontalExpCalendar
+                android:id="@+id/app_persian_calendar"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                app:initial_view="Month"
+                app:mark_selected_day="true"
+                app:mark_today="true"
+                app:center_container_expanded_height="260dp"
+                app:range_months_after_init="12"
+                app:range_months_before_init="12"
+                app:top_container_height="0dp"
+                app:use_RTL_direction="true" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

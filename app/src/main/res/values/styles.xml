@@ -1,0 +1,137 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="BaseAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">#333</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="SplashScreenTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="roundedEditText" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <item name="boxCornerRadiusTopStart">29dp</item>
+        <item name="boxCornerRadiusBottomEnd">29dp</item>
+        <item name="boxCornerRadiusBottomStart">29dp</item>
+        <item name="boxCornerRadiusTopEnd">29dp</item>
+        <item name="boxStrokeColor">#3C3C3C</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+
+    </style>
+
+    <style name="roundedEditTextWithStroke" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <item name="boxCornerRadiusTopStart">30dp</item>
+        <item name="boxCornerRadiusBottomEnd">30dp</item>
+        <item name="boxCornerRadiusBottomStart">30dp</item>
+        <item name="boxCornerRadiusTopEnd">30dp</item>
+        <item name="boxStrokeColor">#FFFFFF</item>
+    </style>
+
+
+    <style name="roundedAutoCompleteEditText" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+        <item name="boxCornerRadiusTopStart">29dp</item>
+        <item name="boxCornerRadiusBottomEnd">29dp</item>
+        <item name="boxCornerRadiusBottomStart">29dp</item>
+        <item name="boxCornerRadiusTopEnd">29dp</item>
+        <item name="boxStrokeColor">#3C3C3C</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+    </style>
+
+
+    <style name="ErrorTextAppearance" parent="TextAppearance.AppCompat.Small">
+        <item name="fontFamily">@font/iran_sans</item>
+        <item name="android:textColor">#E1012A</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:paddingRight">2dp</item>
+        <item name="android:paddingBottom">2dp</item>
+    </style>
+
+    <style name="bottomNavTextAppearance" parent="TextAppearance.AppCompat.Small">
+        <item name="fontFamily">@font/iran_sans_light</item>
+        <item name="android:textColor">#6D6870</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:paddingTop">5dp</item>
+    </style>
+
+
+    <style name="roundedButton" parent="Widget.MaterialComponents.Button.Icon">
+        <item name="cornerRadius">30dp</item>
+    </style>
+
+    <style name="strokeButton" parent="roundedButton">
+        <item name="strokeWidth">3dp</item>
+        <item name="strokeColor">#C52184</item>
+    </style>
+
+    <style name="strokeButton2" parent="roundedButton">
+        <item name="strokeWidth">3dp</item>
+        <item name="strokeColor">#FAC4F2</item>
+    </style>
+
+
+    <!--     bottom navigation cardView-->
+    <style name="bottomNavigationCardView" parent="@style/Theme.MaterialComponents.Light">
+        <item name="shapeAppearanceOverlay">
+            @style/ShapeAppearanceOverlay.MaterialCardView.Cut.bottomNavigationAttributes
+        </item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.MaterialCardView.Cut.bottomNavigationAttributes" parent="Theme.MaterialComponents.Light">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">24dp</item>
+        <item name="cornerSizeTopLeft">24dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="android:background">#ffff</item>
+    </style>
+
+    <style name="tabLayoutTextAppearance" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:textSize">17sp</item>
+        <item name="android:fontFamily">@font/iran_sans</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.MaterialCardView" parent="Theme.MaterialComponents.Light">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">30dp</item>
+        <item name="cornerSizeTopLeft">30dp</item>
+        <item name="android:background">#ffff</item>
+        <item name="boxStrokeWidth">0dp</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.MaterialCardView.Bottom.Round" parent="Theme.MaterialComponents.Light">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeBottomLeft">16dp</item>
+        <item name="cornerSizeBottomRight">16dp</item>
+        <item name="boxStrokeWidth">0dp</item>
+    </style>
+
+    <style name="Calendar" parent="Platform.MaterialComponents.Light">
+        <item name="shapeAppearanceOverlay">
+            @style/ShapeAppearanceOverlay.MaterialCardView.Bottom.Round
+        </item>
+    </style>
+
+    <style name="Dialog" parent="Platform.MaterialComponents.Light">
+        <item name="shapeAppearanceOverlay">
+            @style/ShapeAppearanceOverlay.MaterialCardView
+        </item>
+    </style>
+
+    <style name="counterText">
+
+    </style>
+</resources>

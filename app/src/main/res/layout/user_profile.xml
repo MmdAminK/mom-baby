@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundColor">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/user_profile_image"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:contentDescription="@string/contentDescription"
+                    android:elevation="2dp"
+                    android:src="@drawable/profile_icon" />
+
+                <TextView
+                    android:id="@+id/user_profile_phone_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="09362883480"
+                    android:letterSpacing=".05"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/iran_sans_medium"
+                    android:gravity="center" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/user_profile_edit_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="3dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginLeft="12dp">
+
+                    <TextView
+                        android:id="@+id/user_profile_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/ic_edit_profile"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="@font/iran_sans_medium"
+                        android:gravity="right"
+                        android:textColor="@color/black"
+                        android:padding="16dp"
+                        android:text="مشخص نشده"
+                        android:textSize="17sp" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/profile_reminder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="3dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginLeft="12dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="یادآوری ها"
+                        android:textSize="17sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/iran_sans_medium"
+                        android:gravity="right"
+                        android:drawableRight="@drawable/ic_reminder_icon"
+                        android:padding="16dp"
+                        android:drawablePadding="16dp" />
+
+                    <ImageView
+                        android:id="@+id/alarm_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/iran_sans_medium"
+                        android:gravity="right"
+                        android:src="@drawable/ic_reminder_icon"
+                        android:padding="16dp"
+                        android:drawablePadding="16dp" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/user_profile_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="3dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginLeft="12dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@drawable/lock_icon"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="@font/iran_sans_medium"
+                        android:gravity="right"
+                        android:textColor="@color/black"
+                        android:padding="16dp"
+                        android:text="رمز عبور"
+                        android:textSize="17sp" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="3dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginLeft="12dp">
+
+                    <LinearLayout
+                        android:id="@+id/pregnancy_status_linear"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+
+                        <LinearLayout
+                            android:id="@+id/not_pregnant_linear"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="26dp"
+                                android:layout_height="60dp"
+                                android:layout_gravity="center"
+                                android:contentDescription="@string/contentDescription"
+                                android:src="@drawable/not_pregnant" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/iran_sans_bold"
+                                android:text="باردار نیستم"
+                                android:textColor="@color/appDarkPurple"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+
+                        <com.github.angads25.toggle.widget.LabeledSwitch
+                            android:id="@+id/user_profile_sticky_switch"
+                            android:layout_width="90dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            app:colorBorder="@color/appDarkPurple"
+                            app:colorOn="@color/appDarkPurple"
+                            app:on="false"
+                            app:textOff=""
+                            app:textOn="" />
+
+                        <LinearLayout
+                            android:id="@+id/pregnant_linear"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="26dp"
+                                android:layout_height="60dp"
+                                android:layout_gravity="center"
+                                android:contentDescription="@string/contentDescription"
+                                android:src="@drawable/pregnant" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/iran_sans_bold"
+                                android:text="باردار هستم"
+                                android:textColor="@color/appDarkPurple"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/user_profile_contact_us"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="3dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="7dp"
+                        android:layout_marginRight="12dp"
+                        android:layout_marginLeft="12dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="ارتباط با ما"
+                            android:textSize="16sp"
+                            android:textColor="@color/black"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/iran_sans_medium"
+                            android:gravity="right"
+                            android:drawableRight="@drawable/ic_contact_us_icon"
+                            android:padding="16dp"
+                            android:drawablePadding="16dp" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/user_profile_friends"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="3dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="7dp"
+                        android:layout_marginRight="12dp"
+                        android:layout_marginLeft="12dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="معرفی دوستان"
+                            android:textSize="16sp"
+                            android:textColor="@color/black"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/iran_sans_medium"
+                            android:gravity="right"
+                            android:drawableRight="@drawable/friends"
+                            android:padding="16dp"
+                            android:drawablePadding="16dp" />
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/user_profile_about_us"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="3dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="7dp"
+                        android:layout_marginRight="12dp"
+                        android:layout_marginLeft="12dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="درباره ما"
+                            android:textSize="16sp"
+                            android:textColor="@color/black"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/iran_sans_medium"
+                            android:gravity="right"
+                            android:drawableRight="@drawable/ic_about_us_icon"
+                            android:padding="16dp"
+                            android:drawablePadding="16dp" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/user_profile_rules"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="3dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="7dp"
+                        android:layout_marginRight="12dp"
+                        android:layout_marginLeft="12dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="قوانین"
+                            android:textSize="16sp"
+                            android:maxLines="1"
+                            android:textColor="@color/black"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/iran_sans_medium"
+                            android:gravity="right"
+                            android:drawableRight="@drawable/ic_rules_icon"
+                            android:padding="16dp"
+                            android:drawablePadding="16dp" />
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:weightSum="3"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginLeft="12dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/twitter"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="48dp"
+                        app:cardCornerRadius="12dp"
+                        android:visibility="gone"
+                        app:cardElevation="4dp"
+                        android:layout_margin="6dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleX=".55"
+                            android:scaleY=".55"
+                            android:src="@drawable/ic_twiter_icon" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/telegram"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="48dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="4dp"
+                        android:layout_margin="6dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleX=".55"
+                            android:scaleY=".55"
+                            android:src="@drawable/telegram_icon" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/instagram"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="4dp"
+                        android:layout_margin="6dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleX=".55"
+                            android:scaleY=".55"
+                            android:src="@drawable/ic_instagram_icon" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/whats_app"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="48dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="4dp"
+                        android:layout_margin="6dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleX=".55"
+                            android:scaleY=".55"
+                            android:src="@drawable/ic_whats_app_icon" />
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:text="V 1.0.0 \n Powerd By VestaTeam.net"
+                    android:textSize="14sp"
+                    android:textColor="#6D6870"
+                    android:layout_marginBottom="12dp" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

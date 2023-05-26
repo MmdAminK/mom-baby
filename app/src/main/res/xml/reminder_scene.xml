@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene>
+
+    <ConstraintSet id="@+id/start" />
+    <ConstraintSet id="@+id/end">
+        <Constraint
+            id="@+id/reminder_dilog"
+            layout_constraintEnd_toEndOf="parent"
+            layout_constraintStart_toStartOf="parent"
+            layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+    <Transition
+        constraintSetStart="@+id/start"
+        constraintSetEnd="@+id/end"
+        autoTransition="animateToEnd">
+        <OnSwipe touchAnchorId="@+id/reminder_add" />
+    </Transition>
+</MotionScene>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/userProfile"
+        android:icon="@drawable/nav_profile"
+        android:title="پروفایل" />
+    <item
+        android:id="@+id/tests"
+        android:icon="@drawable/nav_tests"
+        android:title="تست ها" />
+
+    <item
+        android:id="@+id/tools"
+        android:icon="@drawable/nav_tools"
+        android:title="ابزار ها" />
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/bottom_nav_home"
+        android:title="خانه" />
+</menu>

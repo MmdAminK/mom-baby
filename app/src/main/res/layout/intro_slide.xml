@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="introUiModel"
+            type="com.app.mombaby.models.intro.IntroUiModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:scaleType="centerCrop"
+                android:background="@drawable/intro_background"
+                android:contentDescription="@string/contentDescription" />
+
+            <ImageView
+                android:id="@+id/intro_back_ground"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:contentDescription="@string/contentDescription"
+                android:scaleType="fitXY"
+                android:src="@drawable/intro_image_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent=".4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/intro_slides_image"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:contentDescription="@string/contentDescription"
+                app:layout_constraintBottom_toBottomOf="@+id/intro_back_ground"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent=".32"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/intro_back_ground" />
+
+            <TextView
+                android:id="@+id/intro_slide_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="22dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/iran_sans_bold"
+                android:gravity="right"
+                android:maxLines="1"
+                android:text="@{introUiModel.title}"
+                android:textColor="#ff000000"
+                android:textSize="21sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/intro_back_ground"
+                tools:targetApi="o" />
+
+            <TextView
+                android:id="@+id/intro_slide_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="24dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/iran_sans"
+                android:gravity="right"
+                android:maxLines="4"
+                android:text="@{introUiModel.description}"
+                android:textColor="#ff000000"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/intro_slide_title" />
+
+            <ImageView
+                android:id="@+id/intro_slide_first_circle"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginRight="3dp"
+                android:src="@drawable/filled_circle"
+                app:layout_constraintBottom_toTopOf="@+id/intro_slide_next"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/intro_slide_second_circle"
+                app:layout_constraintTop_toBottomOf="@+id/intro_slide_description" />
+
+            <ImageView
+                android:id="@+id/intro_slide_second_circle"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginRight="3dp"
+                android:src="@drawable/empty_circle"
+                app:layout_constraintBottom_toTopOf="@+id/intro_slide_next"
+                app:layout_constraintLeft_toRightOf="@+id/intro_slide_first_circle"
+                app:layout_constraintRight_toLeftOf="@+id/intro_slide_third_circle"
+                app:layout_constraintTop_toBottomOf="@+id/intro_slide_description" />
+
+            <ImageView
+                android:id="@+id/intro_slide_third_circle"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/empty_circle"
+                app:layout_constraintBottom_toTopOf="@+id/intro_slide_next"
+                app:layout_constraintLeft_toRightOf="@+id/intro_slide_second_circle"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/intro_slide_description" />
+
+            <TextView
+                android:id="@+id/intro_slide_previous"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/iran_sans"
+                android:text="قبلی >> "
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/intro_slide_next"
+                app:layout_constraintTop_toBottomOf="@+id/intro_slide_first_circle" />
+
+            <TextView
+                android:id="@+id/intro_slide_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/iran_sans"
+                android:text="بعدی"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/intro_slide_previous"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/intro_slide_first_circle" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

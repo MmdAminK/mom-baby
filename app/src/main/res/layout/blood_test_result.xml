@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/pregnant_status_back"
+            android:alpha=".35"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FFE8E4"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/blood_result_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/iran_sans"
+                            android:gravity="center"
+                            android:paddingTop="12dp"
+                            android:text="نتیجه تست بارداری شما"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <View
+                            android:layout_width="80dp"
+                            android:layout_height="2dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="4dp"
+                            android:background="#ff000000" />
+
+                        <TextView
+                            android:id="@+id/blood_result_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginBottom="16dp"
+                            android:fontFamily="@font/iran_sans_black"
+                            android:gravity="center"
+                            android:paddingTop="12dp"
+                            android:textColor="#EF476F"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/blood_result_test_again"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="تست مجدد"
+                    android:gravity="center"
+                    android:paddingTop="12dp"
+                    android:fontFamily="@font/iran_sans_bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/pink600"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintVertical_bias=".1"
+                    android:layout_margin="16dp"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/blood_result_test_again">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:textSize="18sp"
+                                android:text="مقدار بتا"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/iran_sans_medium"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:textSize="18sp"
+                                android:gravity="center"
+                                android:text="سن حاملگی"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/iran_sans_medium"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/black" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:textSize="16sp"
+                                android:text="5 - 50"
+                                android:gravity="center"
+                                android:textColor="#6E676F"
+                                android:fontFamily="@font/iran_sans"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:textSize="16sp"
+                                android:text="3 هفته بارداری"
+                                android:gravity="center"
+                                android:textColor="#6E676F"
+                                android:fontFamily="@font/iran_sans"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2"
+                            android:background="#33CCCCCC">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:textSize="16sp"
+                                android:gravity="center"
+                                android:text="5 - 426"
+                                android:textColor="#6E676F"
+                                android:fontFamily="@font/iran_sans"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:textSize="16sp"
+                                android:text="4 هفته بارداری"
+                                android:gravity="center"
+                                android:textColor="#6E676F"
+                                android:fontFamily="@font/iran_sans"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:textSize="16sp"
+                                android:gravity="center"
+                                android:text="18 - 7340"
+                                android:textColor="#6E676F"
+                                android:fontFamily="@font/iran_sans"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:textSize="16sp"
+                                android:gravity="center"
+                                android:text="5 هفته بارداری"
+                                android:textColor="#6E676F"
+                                android:fontFamily="@font/iran_sans"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2"
+                            android:background="#33CCCCCC">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:textSize="16sp"
+                                android:gravity="center"
+                                android:text="1080 - 56500"
+                                android:textColor="#6E676F"
+                                android:fontFamily="@font/iran_sans"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:textSize="16sp"
+                                android:gravity="center"
+                                android:text="6 هفته بارداری"
+                                android:textColor="#6E676F"
+                                android:fontFamily="@font/iran_sans"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:textSize="16sp"
+                                android:text="7650 - 229000"
+                                android:gravity="center"
+                                android:textColor="#6E676F"
+                                android:fontFamily="@font/iran_sans"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:textSize="16sp"
+                                android:gravity="center"
+                                android:text="7-8 هفته بارداری"
+                                android:textColor="#6E676F"
+                                android:fontFamily="@font/iran_sans"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2"
+                            android:background="#33CCCCCC">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:textSize="16sp"
+                                android:gravity="center"
+                                android:text="25700 - 288000"
+                                android:textColor="#6E676F"
+                                android:fontFamily="@font/iran_sans"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:textSize="16sp"
+                                android:gravity="center"
+                                android:text="9-12 هفته بارداری"
+                                android:textColor="#6E676F"
+                                android:fontFamily="@font/iran_sans"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:textSize="16sp"
+                                android:gravity="center"
+                                android:text="13300 - 254000"
+                                android:textColor="#6E676F"
+                                android:fontFamily="@font/iran_sans"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:textSize="16sp"
+                                android:gravity="center"
+                                android:text="13-16 هفته بارداری"
+                                android:textColor="#6E676F"
+                                android:fontFamily="@font/iran_sans"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2"
+                            android:background="#33CCCCCC">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:textSize="16sp"
+                                android:gravity="center"
+                                android:text="4060 - 165400"
+                                android:textColor="#6E676F"
+                                android:fontFamily="@font/iran_sans"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:textSize="16sp"
+                                android:gravity="center"
+                                android:text="17-24 هفته بارداری"
+                                android:textColor="#6E676F"
+                                android:fontFamily="@font/iran_sans"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:textSize="16sp"
+                                android:gravity="center"
+                                android:text="3640 - 117000"
+                                android:textColor="#6E676F"
+                                android:fontFamily="@font/iran_sans"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:padding="8dp"
+                                android:textSize="16sp"
+                                android:gravity="center"
+                                android:text="25-40 هفته بارداری"
+                                android:textColor="#6E676F"
+                                android:fontFamily="@font/iran_sans"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
